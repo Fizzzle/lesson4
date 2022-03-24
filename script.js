@@ -1,20 +1,21 @@
-'user strict'
+'use strict';
 
-const now = new Date();
+const box = document.querySelector('.box'),
+    btn = document.querySelector('button');
 
-// console.log(now.setHours(18));
-// console.log(now);
-// console.log(now.getDay());
-// console.log(now.getHours());
-// console.log(now.getUTCHours());
-// console.log(now.getTime());
+// const width = box.clientWidth;
+// const heigth = box.clientHeight;
 
-let start = new Date();
+// const width = box.offsetWidth;
+// const heigth = box.offsetHeight;
 
-for (let i = 0; i < 100000; i++){
-    let some = i ** 3;
-}
+const width = box.scrollWidth;
+const heigth = box.scrollHeight;
 
-let end = new Date();
+console.log(width, heigth);
 
-console.log(`Цикл ${end - start}`);
+btn.addEventListener('click', () => {
+    box.style.height = box.scrollHeight + 'px';
+});
+
+console.log(document.documentElement.scrollTop);
